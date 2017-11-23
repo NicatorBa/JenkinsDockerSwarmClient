@@ -1,4 +1,4 @@
-FROM docker:17.10.0-ce
+FROM docker:17.11.0-ce
 
 ENV SWARM_CLIENT_VERSION 3.6
 
