@@ -1,6 +1,6 @@
 FROM docker:17.11.0-ce
 
-ENV SWARM_CLIENT_VERSION 3.6
+ENV SWARM_CLIENT_VERSION 3.7
 
 RUN apk add --no-cache curl openjdk8-jre && \
     curl -o swarm-client.jar https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/${SWARM_CLIENT_VERSION}/swarm-client-${SWARM_CLIENT_VERSION}.jar
