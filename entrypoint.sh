@@ -5,8 +5,8 @@ if [[ -z "${LABELS}" ]]; then
   exit 1
 fi
 
-if [[ -z "${MASTER}" ]]; then
-  echo "MASTER must be set."
+if [[ -z "${JENKINS_URL}" ]]; then
+  echo "JENKINS_URL must be set."
   exit 1
 fi
 
@@ -20,8 +20,11 @@ if [[ -z "${USER_PASSWORD}" ]]; then
   exit 1
 fi
 
-EXECUTORS=${EXECUTORS:-1}
-NAME=${NAME:-client}
+if [[ -z "${CLIENT_NAME}" ]]; then
+  CLIENT_NAME=$(hostname)
+else
+  CLIENT_NAME=${CLIENT_NAME}.$(hostname)
+fi
 
-mkdir -p /var/jenkins
-java -jar swarm-client.jar -fsroot /var/jenkins -executors ${EXECUTORS} -labels ${LABELS} -name ${NAME}-$(hostname) -master ${MASTER} -username ${USER_NAME} -password ${USER_PASSWORD}
+mkdir -p ${JENKINS_HOME}
+java -jar swarm-client.jar -fsroot ${JENKINS_HOME} -executors ${EXECUTORS} -name ${CLIENT_NAME} -labels ${LABELS} -master ${JENKINS_URL} -username ${USER_NAME} -password ${USER_PASSWORD}

@@ -32,8 +32,9 @@ docker service create \
 | Environment variable | Default value | Description |
 | -------------------- | ------------- | ----------- |
 | LABELS | *required* | Whitespace-separated list of lables to be assigned for this client |
-| MASTER | *required* | The complete target Jenkins URL |
+| JENKINS_URL | *required* | The complete target Jenkins URL |
 | USER_NAME | *required* | The Jenkins username for authentication |
 | USER_PASSWORD | *required* | The Jenkins user password |
-| EXECUTORS | **1** | Number of executors |
-| NAME | **client** | Name of the client |
+| CLIENT_NAME | *optional* | Name of the client |
+| JENKINS_HOME | /var/jenkins | Directory where Jenkins place files |
+| EXECUTORS | 1 | Number of executors |
