@@ -27,4 +27,4 @@ else
 fi
 
 mkdir -p ${JENKINS_HOME}
-java -jar swarm-client.jar -fsroot ${JENKINS_HOME} -executors ${EXECUTORS} -name ${CLIENT_NAME} -labels ${LABELS} -master ${JENKINS_URL} -username ${USER_NAME} -password ${USER_PASSWORD}
+java -jar swarm-client.jar -fsroot ${JENKINS_HOME} -executors ${EXECUTORS} -name ${CLIENT_NAME} -labels "${LABELS}" -master ${JENKINS_URL} -username ${USER_NAME} -password ${USER_PASSWORD}
