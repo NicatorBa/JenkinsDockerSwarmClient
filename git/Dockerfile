@@ -1,5 +1,5 @@
-FROM nicatorba/jenkins-docker-swarm-client:18.06
+FROM nicatorba/jenkins-docker-swarm-client:18.09
 
-LABEL version="18.06-git"
+LABEL version="18.09-git"
 
 RUN apk add --no-cache git openssh-client
