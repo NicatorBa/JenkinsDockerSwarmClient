@@ -1,9 +1,9 @@
 FROM docker:18.09
 
 LABEL name="jenkins-docker-swarm-client" \
-      version="18.09"
+      version="1809.316"
 
-ENV SWARM_CLIENT_VERSION="3.15" \
+ENV SWARM_CLIENT_VERSION="3.16" \
     JENKINS_HOME="/var/jenkins" \
     EXECUTORS="1"
 
