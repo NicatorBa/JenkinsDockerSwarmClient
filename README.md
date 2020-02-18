@@ -16,6 +16,8 @@ on the server running Jenkins:
 
 ## 2. Usage
 
+### 2.1 Docker swarm (legacy)
+
 ```bash
 docker service create \
  --name jenkins-swarm-client \
